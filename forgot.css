@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.Logo {
+    font-size: 1.8em;
+    color: #fff;
+    user-select: none;
+}
+.navigation a {
+    position: relative;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.navigation .btnlogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+.navigation .btnlogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+.container {
+    position: relative;
+    width: 400px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+.container h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.input-text {
+    position: relative;
+    width: 100%;
+    margin: 30px 0;
+}
+.input-text input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    color: #162938;
+    font-size: 1em;
+    padding: 0 15px 0 5px;
+    box-sizing: border-box;
+}
+.input-text label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #162938;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-text input:focus ~ label,
+.input-text input:valid ~ label {
+    top: -5px;
+}
+.forget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #162938;
+    font-size: 0.8em;
+    margin-bottom: 20px;
+}
+.forget label {
+    display: flex;
+    align-items: center;
+}
+.forget input {
+    margin-right: 5px;
+}
+button[type="submit"] {
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    transition: background 0.5s;
+}
+button[type="submit"]:hover {
+    background: #fff;
+    color: #162938;
+}
+.register {
+    font-size: 0.9em;
+    color: #162938;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register a:hover {
+    text-decoration: underline;
+}
