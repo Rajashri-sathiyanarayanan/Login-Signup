@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Categories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="product.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="Logo">The Clothing Store</div>
+    <nav class="navigation">
+      <a href="#">Home</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+      <button class="btnlogin-popup">Login</button>
+    </nav>
+  </header>
+
+  <section class="banner-section">
+    <div class="banner-box women-banner" onclick="document.getElementById('women-wear').scrollIntoView({ behavior: 'smooth' })">
+      <img src="women_sale.jpg" alt="Women Sale" />
+      <div class="banner-text">
+        <h2>Women's Wear</h2>
+        <p>Up to 50% OFF on Latest Styles!</p>
+      </div>
+    </div>
+
+    <div class="banner-box men-banner" onclick="document.getElementById('men-wear').scrollIntoView({ behavior: 'smooth' })">
+      <img src="men_sale.png" alt="Men Sale" />
+      <div class="banner-text">
+        <h2>Men's Wear</h2>
+        <p>Flat 50% OFF on New Arrivals!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section Wrapping Women & Men -->
+  <section id="products">
+
+    <!-- Women's Wear Section -->
+    <section id="women-wear">
+      <h2>Women's Wear</h2>
+      <div class="wear-category-boxes">
+        <a href="western.html" class="wear-box">
+          <img src="western.jpg" alt="Western Wear">
+          <h3>Western Wear</h3>
+        </a>
+         
+        <a href="ethnic.html" class="wear-box">
+          <img src="ethnic.jpg" alt="Ethnic Wear">
+          <h3>Ethnic Wear</h3>
+        </a>
+        <a href="sports.html" class="wear-box">
+          <img src="sports.jpg" alt="Sports Wear">
+          <h3>Sports Wear</h3>
+        </a>
+        <a href="casual.html" class="wear-box">
+          <img src="casual.jpg" alt="Casual Wear">
+          <h3>Casual Wear</h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- Men's Wear Section -->
+    <section id="men-wear">
+      <h2>Men's Wear</h2>
+      <div class="wear-category-boxes">
+        <a href="formal.html" class="wear-box">
+          <img src="formal.jpg" alt="Formal Shirt">
+          <h3>Formal Shirt</h3>
+        </a>
+        <a href="jeans.html" class="wear-box">
+          <img src="denim.jpg" alt="Denim Jeans">
+          <h3>Denim Jeans</h3>
+        </a>
+        <a href="jacket.html" class="wear-box">
+          <img src="jacket.jpg" alt="Leather Jacket">
+          <h3>Leather Jacket</h3>
+        </a>
+        <a href="tshirt.html" class="wear-box">
+          <img src="graphic_tshirt.jpg" alt="Graphic T-Shirt">
+          <h3>Graphic T-Shirt</h3>
+        </a>
+      </div>
+    </section>
+
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p class="contact-subtext">Have questions about our latest collections or your order? Reach out to us — we’d love to help!</p>
+
+      <form action="#" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <p><strong>Email:</strong> support@theclothingstore.com</p>
+        <p><strong>Phone:</strong> +91 9486718373</p>
+        <p><strong>Address:</strong> 23 Gandhi Nagar, Vellore</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 TheClothingStore. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

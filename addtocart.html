@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add to Cart - The Clothing Store</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    /* Your CSS model with some additions */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url('background.jpg') no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding-top: 80px;
+      color: #162938;
+    }
+    header {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 20px 100px;
+      background: rgba(22, 41, 56, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 99;
+      color: white;
+      font-weight: 600;
+      font-size: 1.5rem;
+      user-select: none;
+    }
+
+    .wrapper {
+      position: relative;
+      width: 400px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #162938;
+      font-weight: 700;
+      font-size: 1.8em;
+    }
+
+    .product-info {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .product-info img {
+      width: 110px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(22, 41, 56, 0.7);
+    }
+    .product-details {
+      flex-grow: 1;
+    }
+    .product-details h3 {
+      color: #162938;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+    .price {
+      font-weight: 700;
+      color: #0b3d91;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .input-box {
+      position: relative;
+      height: 50px;
+      width: 120px;
+      border-bottom: 2px solid #162938;
+      margin-top: 10px;
+    }
+    .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      font-size: 1em;
+      color: #162938;
+      font-weight: 500;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+    .input-box input:focus ~ label,
+    .input-box input:valid ~ label {
+      top: -5px;
+      font-size: 0.85em;
+      color: #0b3d91;
+    }
+    .input-box input {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      color: #162938;
+      font-weight: 600;
+      padding: 0 15px 0 5px;
+      text-align: center;
+    }
+
+    .cost-summary {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #0b3d91;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .payment-methods h3 {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #162938;
+    }
+
+    .payment-methods label {
+      display: block;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #162938;
+      margin-bottom: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+      accent-color: #0b3d91;
+      cursor: pointer;
+      transform: scale(1.2);
+      vertical-align: middle;
+    }
+
+    button.btn {
+      width: 100%;
+      height: 45px;
+      background: #162938;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: 700;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    button.btn:hover {
+      background-color: #0b3d91;
+    }
+  </style>
+</head>
+<body>
+
+<header>The Clothing Store</header>
+
+<div class="wrapper">
+  <h2>Cart</h2>
+
+  <div class="product-info">
+    <img src="images/westernwear/floral.jpg" alt="Floral Dress" />
+    <div class="product-details">
+      <h3>Floral Print Casual Dress</h3>
+      <p class="price" id="unitPrice">₹799</p>
+
+      <div class="input-box">
+        <input type="number" id="quantity" min="1" value="1" required />
+        <label for="quantity">Quantity</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="cost-summary" id="costSummary">
+    Total (including 18% GST): ₹799.00
+  </div>
+
+  <div class="payment-methods">
+    <h3>Payment Method</h3>
+    <label><input type="radio" name="payment" value="UPI" checked /> UPI</label>
+    <label><input type="radio" name="payment" value="COD" /> Cash on Delivery</label>
+    <label><input type="radio" name="payment" value="Card" /> Credit/Debit Card</label>
+  </div>
+
+  <button class="btn" onclick="proceedPayment()">Proceed to Payment</button>
+</div>
+
+<script>
+  const unitPrice = 799;
+  const gstRate = 0.18;
+
+  const quantityInput = document.getElementById('quantity');
+  const costSummary = document.getElementById('costSummary');
+
+  function updateCost() {
+    let qty = parseInt(quantityInput.value);
+    if (qty < 1 || isNaN(qty)) qty = 1;
+    quantityInput.value = qty;
+
+    let totalWithoutGST = unitPrice * qty;
+    let gstAmount = totalWithoutGST * gstRate;
+    let totalCost = totalWithoutGST + gstAmount;
+
+    costSummary.textContent = `Total (including 18% GST): ₹${totalCost.toFixed(2)}`;
+  }
+
+  quantityInput.addEventListener('input', updateCost);
+
+  function proceedPayment() {
+    const paymentMethods = document.getElementsByName('payment');
+    let selectedPayment = '';
+    for (const method of paymentMethods) {
+      if (method.checked) {
+        selectedPayment = method.value;
+        break;
+      }
+    }
+    alert(`Proceeding to payment with ${selectedPayment}.\nThank you for shopping with us!`);
+  }
+
+  updateCost();
+</script>
+
+</body>
+</html>

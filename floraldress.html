@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Floral Dress - The Clothing Store</title>
+  <link rel="stylesheet" href="floral.css">
+</head>
+<body>
+
+<header>
+  <h1>The Clothing Store</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- ✨ New Product Highlights Section -->
+<section class="highlight-section">
+  <div class="highlight-card">
+    <img src="images/westernwear/floral.jpg" alt="Floral Dress" class="highlight-image" />
+    <div class="highlight-content">
+      <h3>Floral Print Casual Dress</h3>
+      <p>Perfect for summer days or a casual outing, this floral cotton-blend dress offers comfort and style in one piece. Lightweight and breathable, it's a wardrobe essential.</p>
+      <p class="price">₹799</p>
+      <!-- Added id to this button to attach event listener -->
+      <button id="buyNowBtn" class="btn">Buy Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- Added id to main container for scrolling target -->
+<main id="productSection" class="product-container">
+  <div class="product-image">
+    <img src="images/westernwear/floral.jpg" alt="Floral Dress">
+  </div>
+
+  <div class="product-details">
+    <h2>Floral Dress</h2>
+    <p class="price">₹799</p>
+
+    <p><strong>Material:</strong> Cotton Blend</p>
+    <p><strong>Purchased by:</strong> 327 people</p>
+
+    <div class="size-selection">
+      <label for="size">Size:</label>
+      <select id="size">
+        <option>Select Size</option>
+        <option>XS</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button onclick="openSizeChart()">Size Chart</button>
+    </div>
+
+    <div class="buttons">
+      <button class="like-btn">❤️ Like</button>
+      <a href="addtocart.html"><button class="cart-btn">Add to Cart</button></a>
+      <button class="order-btn">Process Order</button>
+    </div>
+  </div>
+</main>
+
+<!-- Size Chart Modal -->
+<div id="sizeChartModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeSizeChart()">&times;</span>
+    <h3>Size Chart (in inches)</h3>
+    <table>
+      <tr><th>Size</th><th>Bust</th><th>Waist</th><th>Hip</th></tr>
+      <tr><td>XS</td><td>30</td><td>24</td><td>32</td></tr>
+      <tr><td>S</td><td>32</td><td>26</td><td>34</td></tr>
+      <tr><td>M</td><td>34</td><td>28</td><td>36</td></tr>
+      <tr><td>L</td><td>36</td><td>30</td><td>38</td></tr>
+      <tr><td>XL</td><td>38</td><td>32</td><td>40</td></tr>
+    </table>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 The Clothing Store. All rights reserved.</p>
+</footer>
+
+<script>
+  function openSizeChart() {
+    document.getElementById("sizeChartModal").style.display = "block";
+  }
+
+  function closeSizeChart() {
+    document.getElementById("sizeChartModal").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target.classList.contains("modal")) {
+      closeSizeChart();
+    }
+  }
+
+  // Smooth scroll on Buy Now button click
+  document.getElementById("buyNowBtn").addEventListener("click", function() {
+    document.getElementById("productSection").scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
